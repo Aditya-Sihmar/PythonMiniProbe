@@ -1,0 +1,13 @@
+[Unit]
+Description=PRTG Mini Probe
+After=multi-user.target
+
+[Service]
+User=administrator
+Group=administrator
+WorkingDirectory=/home/administrator/PRTG/PythonMiniProbe/miniprobe/
+ExecStart=/home/administrator/PRTG/PythonMiniProbe/miniprobe/run_script.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

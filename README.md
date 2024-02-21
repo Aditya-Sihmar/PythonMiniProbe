@@ -30,6 +30,7 @@ Installation
 - Download either zip or clone repository
 - run command 'sudo python setup.py install' which will install all necessary packages
 - run command 'sudo python setup.py configure' which will bring up the configuration dialogue
+- after configuration sometimes the miniprobe doesn't get connected to the central system open the config file (miniprobe/probe.conf) and put the central system ip in there it will be set to None otherwise.
 
 The miniprobe should now be started. You should also be able to start/stop the same using the command
 
@@ -39,6 +40,12 @@ or
 
     sudo service prtgprobe stop
 
+- Update the username in the files miniprobe/prtg.service and miniprobe/run_script by default they are set to administrator
+        
+        sudo mv prtg.service /etc/systemd/system/prtg.service
+        sudo systemctl daemon-reload
+        sudo systemctl start prtg
+        sudo systemctl status prtg
 
 Migration Guide
 ---------------
