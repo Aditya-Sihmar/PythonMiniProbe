@@ -42,10 +42,13 @@ or
 
 - Update the username in the files miniprobe/prtg.service and miniprobe/run_script by default they are set to administrator
         
+        sudo chmod +x run_service.sh
         sudo mv prtg.service /etc/systemd/system/prtg.service
+        sudo chmod +777 logs/
         sudo systemctl daemon-reload
         sudo systemctl start prtg
         sudo systemctl status prtg
+        sudo systemctl enable prtg
 
 Migration Guide
 ---------------
