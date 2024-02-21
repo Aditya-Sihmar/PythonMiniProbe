@@ -287,17 +287,17 @@ class Configure(_install):
         if not (tmp_ip == "") or not (default == ""):
             if (tmp_ip == "") and not (default == ""):
                 tmp_ip = default
-            response = os.system("ping -c 1 " + tmp_ip + " > /dev/null")
-            if not response == 0:
-                print(Bcolor.YELLOW + "PRTG Server can not be reached. Please make sure the server is reachable." 
-                      + Bcolor.END)
-                go_on = "%s" % str(raw_input(Bcolor.YELLOW + "Do you still want to continue using this server [y/N]: " 
-                                             + Bcolor.END)).rstrip().lstrip()
-                if not go_on.lower() == "y":
-                    return tmp_ip
-            else:
-                print(Bcolor.GREEN + "PRTG Server can be reached. Continuing..." + Bcolor.END)
+            # response = os.system("ping -c 1 " + tmp_ip + " > /dev/null")
+            # if not response == 0:
+            #     print(Bcolor.YELLOW + "PRTG Server can not be reached. Please make sure the server is reachable." 
+            #           + Bcolor.END)
+            #     go_on = "%s" % str(raw_input(Bcolor.YELLOW + "Do you still want to continue using this server [y/N]: " 
+            #                                  + Bcolor.END)).rstrip().lstrip()
+            #     if not go_on.lower() == "y":
                 return tmp_ip
+            # else:
+            #     print(Bcolor.GREEN + "PRTG Server can be reached. Continuing..." + Bcolor.END)
+            #     return tmp_ip
         else:
             print(Bcolor.YELLOW + "You have not provided an IP/DNS name of the PRTG Core Server." + Bcolor.END)
             return self.get_config_ip()
