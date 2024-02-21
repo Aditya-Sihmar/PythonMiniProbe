@@ -294,7 +294,7 @@ class Configure(_install):
                 go_on = "%s" % str(raw_input(Bcolor.YELLOW + "Do you still want to continue using this server [y/N]: " 
                                              + Bcolor.END)).rstrip().lstrip()
                 if not go_on.lower() == "y":
-                    return self.get_config_ip()
+                    return tmp_ip
             else:
                 print(Bcolor.GREEN + "PRTG Server can be reached. Continuing..." + Bcolor.END)
                 return tmp_ip
