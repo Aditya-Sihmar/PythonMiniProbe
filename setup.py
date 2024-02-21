@@ -28,8 +28,8 @@ from setuptools import setup, find_packages
 from setuptools.command.install import install as _install
 
 # Input fix for python2/3 compatibility
-if sys.version_info > (3, 0):
-    raw_input = input
+# if sys.version_info > (3, 0):
+raw_input = input
 
 
 def read(path):
@@ -455,10 +455,11 @@ class Configure(_install):
             print("%s. Exiting!" % e)
             return False
 
-if sys.version > (3, 0):
-    py_requires = 'requirements3.txt'
-else:
-    py_requires = 'requirements.txt'
+# if sys.version > (3, 0):
+#     py_requires = 'requirements3.txt'
+# else:
+#     py_requires = 'requirements.txt'
+py_requires='requirements.txt'
 with open(py_requires) as f:
     requires = f.read().splitlines()
 
